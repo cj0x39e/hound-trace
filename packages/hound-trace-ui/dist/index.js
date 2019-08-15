@@ -150,7 +150,6 @@ var DOMID = 'hound_trance_mermaid_container';
  */
 
 function renderCallback(callStack) {
-  console.log(callStack);
   var element = document.createElement('div');
   element.id = DOMID;
   var graphDefinition = 'graph TB;';
@@ -178,7 +177,6 @@ function renderCallback(callStack) {
     graphDefinition += "\n".concat(frame.name);
   }
 
-  console.log(graphDefinition);
   element.innerHTML = graphDefinition;
   document.body.appendChild(element);
   __WEBPACK_IMPORTED_MODULE_0_mermaid___default.a.initialize({

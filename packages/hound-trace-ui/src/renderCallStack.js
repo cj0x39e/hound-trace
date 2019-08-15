@@ -7,7 +7,6 @@ const DOMID = 'hound_trance_mermaid_container';
  */
 
 export default function renderCallback(callStack) {
-    console.log(callStack);
     let element = document.createElement('div');
     element.id = DOMID;
 
@@ -31,8 +30,6 @@ export default function renderCallback(callStack) {
         const frame = queue[0];
         graphDefinition += `\n${frame.name}`;
     }
-
-    console.log(graphDefinition);
 
     element.innerHTML = graphDefinition;
 
