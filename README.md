@@ -82,5 +82,7 @@ houndTrace.end();
 
 欢迎反馈问题或建议!<br />点击这个链接提交 [issues page](https://github.com/cj0x39e/hound-trace/issues).
 
+也可以加入群讨论该工具的相关技术: 878244740。
+
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
