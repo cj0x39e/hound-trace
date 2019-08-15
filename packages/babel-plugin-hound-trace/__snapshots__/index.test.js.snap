@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hound-trace arrow function expression: arrow function expression 1`] = `
+"
+const test = (a, b, c) => {
+    const cj = 'cj';
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const test = (a, b, c) => {
+  let __traceParent__ = window.__traceParent__;
+  let __traceOldParent__ = __traceParent__;
+
+  if (window.__trace__) {
+    if (!__traceParent__.next) {
+      __traceParent__.next = [];
+    }
+
+    const current = {
+      name: 'test',
+      params: [\\"a\\", \\"b\\", \\"c\\"]
+    };
+
+    __traceParent__.next.push(current);
+
+    window.__traceParent__ = current;
+  }
+
+  const cj = 'cj';
+  window.__traceParent__ = __traceOldParent__;
+};
+"
+`;
+
+exports[`hound-trace call expression with arrow function expression: call expression with arrow function expression 1`] = `
+"
+callback(() => {})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+callback(() => {});
+"
+`;
+
+exports[`hound-trace call expression with function expression: call expression with function expression 1`] = `
+"
+callback(function () {
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+callback(function () {});
+"
+`;
+
+exports[`hound-trace function declaration: function declaration 1`] = `
+"
+function test(a, b, c) {
+    const cj = 'cj';
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+function test(a, b, c) {
+  let __traceParent__ = window.__traceParent__;
+  let __traceOldParent__ = __traceParent__;
+
+  if (window.__trace__) {
+    if (!__traceParent__.next) {
+      __traceParent__.next = [];
+    }
+
+    const current = {
+      name: 'test',
+      params: [\\"a\\", \\"b\\", \\"c\\"]
+    };
+
+    __traceParent__.next.push(current);
+
+    window.__traceParent__ = current;
+  }
+
+  const cj = 'cj';
+  window.__traceParent__ = __traceOldParent__;
+}
+"
+`;
+
+exports[`hound-trace function expression: function expression 1`] = `
+"
+const test = function (a, b, c) {
+    const cj = 'cj';
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const test = function (a, b, c) {
+  let __traceParent__ = window.__traceParent__;
+  let __traceOldParent__ = __traceParent__;
+
+  if (window.__trace__) {
+    if (!__traceParent__.next) {
+      __traceParent__.next = [];
+    }
+
+    const current = {
+      name: 'test',
+      params: [\\"a\\", \\"b\\", \\"c\\"]
+    };
+
+    __traceParent__.next.push(current);
+
+    window.__traceParent__ = current;
+  }
+
+  const cj = 'cj';
+  window.__traceParent__ = __traceOldParent__;
+};
+"
+`;

@@ -1,0 +1,26 @@
+{
+  "name": "babel-plugin-hound-trace",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cj0x39e/hound-trace",
+    "directory": "packages/babel-plugin-hound-trace"
+  },
+  "bugs": {
+    "url": "https://github.com/cj0x39e/hound-trace/issues"
+  },
+  "files": [
+    "index.js",
+    "utils.js"
+  ],
+  "main": "index.js",
+  "author": "cj",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-plugin-tester": "^6.4.0",
+    "jest": "^24.8.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

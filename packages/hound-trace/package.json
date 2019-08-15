@@ -1,0 +1,26 @@
+{
+  "name": "hound-trace",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cj0x39e/hound-trace",
+    "directory": "packages/hound-trace"
+  },
+  "bugs": {
+    "url": "https://github.com/cj0x39e/hound-trace/issues"
+  },
+  "main": "dist/index.js",
+  "author": "CJ",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "rollup-plugin-babel": "^4.3.3"
+  },
+  "scripts": {
+    "build": "npx rollup --config rollup.config.js"
+  },
+  "files": [
+    "dist/*"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "@fcedu/eslint-config-fcedu": "^0.0.5",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-config-alloy": "^2.0.5",
+    "lerna": "^3.16.4"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
