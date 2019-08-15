@@ -68,7 +68,7 @@ houndTrace.end();
 
 ## 案例
 
-这是 [example](https://github.com/cj0x39e/hound-trace/example) 的代码经过 `hound-trace` 捕获后得到的图。
+这是 [example](https://github.com/cj0x39e/hound-trace/tree/master/example) 的代码经过 `hound-trace` 捕获后得到的图。
 
 ![b.png](https://i.loli.net/2019/08/15/6NAstG4n5Bz2qlj.png)
 
