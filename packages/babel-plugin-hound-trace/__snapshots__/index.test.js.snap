@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`hound-trace __NoTraceHook__ function: __NoTraceHook__ function 1`] = `
+"
+function __NoTraceHook__A() {}
+
+const __NoTraceHook__B = () =>  {}
+
+const __NoTraceHook__C = function () { }
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+function __NoTraceHook__A() {}
+
+const __NoTraceHook__B = () => {};
+
+const __NoTraceHook__C = function () {};
+"
+`;
+
 exports[`hound-trace arrow function expression: arrow function expression 1`] = `
 "
 const test = (a, b, c) => {

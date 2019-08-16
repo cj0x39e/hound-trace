@@ -42,6 +42,16 @@ pluginTester({
             code: `
                 callback(() => {})
             `
+        },
+        {
+            title: '__NoTraceHook__ function',
+            code: `
+                function __NoTraceHook__A() {}
+
+                const __NoTraceHook__B = () =>  {}
+
+                const __NoTraceHook__C = function () { }
+            `
         }
     ]
 });
