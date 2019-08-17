@@ -84,5 +84,7 @@ houndTrace.end();
 
 也可以加入群讨论该工具的相关技术: 878244740。
 
+造这个轮子的背景文章：[写一个 JS 调用栈可视化工具 hound-trace](https://zhuanlan.zhihu.com/p/78351504)
+
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
