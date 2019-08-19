@@ -1359,10 +1359,10 @@ babel-plugin-dynamic-import-node@^2.3.0:
   dependencies:
     object.assign "^4.1.0"
 
-babel-plugin-hound-trace@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/babel-plugin-hound-trace/-/babel-plugin-hound-trace-0.0.2.tgz#8c2899ec4cef79d8a0be92d6fabaa291d98c351c"
-  integrity sha512-aZ0jpt7Xh8x789I5rJSLw++rN7YB/MM/arslZIE4BvWeE1jTejRahuR0XnkR9Jkqcr/zKpZF+iVFbpqLbVR6vA==
+babel-plugin-hound-trace@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/babel-plugin-hound-trace/-/babel-plugin-hound-trace-0.0.3.tgz#27086f6620b078e662e69c37d2739feaa68b83ab"
+  integrity sha512-JZpv2XDdAMUQp/0I16qdGOvwnxFxaIHEQ+gRQd7pgJqr9GFoGdyM1BwyWnrv3SG4q6J6cNyCqmXtogW7hhYGfg==
 
 babelify@^10.0.0:
   version "10.0.0"
@@ -3376,10 +3376,10 @@ hosted-git-info@^2.1.4:
   resolved "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.8.4.tgz#44119abaf4bc64692a16ace34700fed9c03e2546"
   integrity sha512-pzXIvANXEFrc5oFFXRMkbLPQ2rXRoDERwDLyrcUxGhaZhgP54BBSl9Oheh7Vv0T090cszWBxPjkQQ5Sq1PbBRQ==
 
-hound-trace-ui@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/hound-trace-ui/-/hound-trace-ui-0.0.2.tgz#d6d2c79bcff5b712d07c31d2b904beedf230449e"
-  integrity sha512-EZq4Re7AuX7PPJBgxJy+/hepQvVciGPO1AASODAsTsxkmQZP/TLQy8rrd2DYKt7HQ+enunTgebMqH7GBEMOc8A==
+hound-trace-ui@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/hound-trace-ui/-/hound-trace-ui-0.0.3.tgz#40f94fe396a1504212d254912c17b9570631150f"
+  integrity sha512-DUWt6PHVoeypsS1Odlurhq1YdtfMMf57Ibv67rb8dCuhJy93S2H8oRb6hDTxJZgVDqYpc/2BvFRD9IPZhExGgg==
   dependencies:
     mermaid "^8.2.3"
 

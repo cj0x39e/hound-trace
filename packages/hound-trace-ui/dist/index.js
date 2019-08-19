@@ -91,10 +91,10 @@ function start() {
   __WEBPACK_IMPORTED_MODULE_0__hound_trace_src_index__["a" /* default */].start();
 }
 
-function end() {
+function end(options) {
   __WEBPACK_IMPORTED_MODULE_0__hound_trace_src_index__["a" /* default */].end(function (callStack) {
     setTimeout(function () {
-      Object(__WEBPACK_IMPORTED_MODULE_1__renderCallStack__["a" /* default */])(callStack);
+      Object(__WEBPACK_IMPORTED_MODULE_1__renderCallStack__["a" /* default */])(callStack, options);
     }, 14);
   });
 }
@@ -143,22 +143,44 @@ function __NoTraceHook__end(callback) {
 /* harmony export (immutable) */ __webpack_exports__["a"] = renderCallback;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mermaid__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mermaid___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_mermaid__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 var DOMID = 'hound_trance_mermaid_container';
+var defaultOptions = {
+  maxCallFrame: 100
+};
 /**
- * 渲染调用栈
+ *
+ * @param {function} callStack
+ * @param {object} options
+ * @param {object.maxCallFrame} maxCallFrame max call frame number, default 100
  */
 
-function renderCallback(callStack) {
+function renderCallback(callStack, options) {
+  var _defaultOptions$optio = _objectSpread({}, defaultOptions, {}, options),
+      maxCallFrame = _defaultOptions$optio.maxCallFrame;
+
   var element = document.createElement('div');
   element.id = DOMID;
   var graphDefinition = 'graph TB;';
-  var queue = [callStack.next[0]];
+  var frameCount = 0;
+  var queue = [callStack];
 
   var _loop = function _loop() {
     var frame = _queue[_i];
 
     if (Array.isArray(frame.next)) {
+      frameCount++;
+
+      if (frameCount > maxCallFrame) {
+        return "break";
+      }
+
       var showLable = frame.next.length > 1; // eslint-disable-next-line no-loop-func
 
       frame.next.forEach(function (n, i) {
@@ -169,10 +191,12 @@ function renderCallback(callStack) {
   };
 
   for (var _i = 0, _queue = queue; _i < _queue.length; _i++) {
-    _loop();
+    var _ret = _loop();
+
+    if (_ret === "break") break;
   }
 
-  if (queue.length === 1) {
+  if (queue.length === 1 && !Array.isArray(queue[0].next)) {
     var frame = queue[0];
     graphDefinition += "\n".concat(frame.name);
   }

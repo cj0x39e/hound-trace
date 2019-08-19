@@ -8,10 +8,10 @@ function start() {
     houndTrace.start();
 }
 
-function end() {
+function end(options) {
     houndTrace.end(callStack => {
         setTimeout(() => {
-            renderCallStack(callStack);
+            renderCallStack(callStack, options);
         }, 14);
     });
 }

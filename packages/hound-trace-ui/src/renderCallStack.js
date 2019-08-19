@@ -2,20 +2,33 @@ import mermaid from 'mermaid';
 
 const DOMID = 'hound_trance_mermaid_container';
 
-/**
- * 渲染调用栈
- */
+const defaultOptions = {
+    maxCallFrame: 100
+};
 
-export default function renderCallback(callStack) {
-    let element = document.createElement('div');
+/**
+ *
+ * @param {function} callStack
+ * @param {object} options
+ * @param {object.maxCallFrame} maxCallFrame max call frame number, default 100
+ */
+export default function renderCallback(callStack, options) {
+    const {
+        maxCallFrame
+    } = { ...defaultOptions, ...options };
+    const element = document.createElement('div');
     element.id = DOMID;
 
     let graphDefinition = 'graph TB;';
+    let frameCount = 0;
 
-    let queue = [callStack.next[0]];
+    const queue = [callStack];
 
     for (const frame of queue) {
         if (Array.isArray(frame.next)) {
+            frameCount++;
+
+            if (frameCount > maxCallFrame) { break }
 
             const showLable = frame.next.length > 1;
             // eslint-disable-next-line no-loop-func
@@ -26,7 +39,7 @@ export default function renderCallback(callStack) {
         }
     }
 
-    if (queue.length === 1) {
+    if (queue.length === 1 && !Array.isArray(queue[0].next)) {
         const frame = queue[0];
         graphDefinition += `\n${frame.name}`;
     }

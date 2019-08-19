@@ -17,7 +17,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
-    "babel-plugin-hound-trace": "^0.0.2",
-    "hound-trace-ui": "^0.0.2"
+    "babel-plugin-hound-trace": "^0.0.3",
+    "hound-trace-ui": "^0.0.3"
   }
 }
