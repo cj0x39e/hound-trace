@@ -137,3 +137,64 @@ const test = function (a, b, c) {
 };
 "
 `;
+
+exports[`hound-trace return function: return function 1`] = `
+"
+function A(a, b, c) {
+    if ( a === b) {
+        return 'ok';
+    }
+
+    switch (c) {
+        case '1':
+            return '1';
+    
+        default:
+            return '2';
+    }
+
+    return 'error';
+}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+function A(a, b, c) {
+  let __traceParent__ = window.__traceParent__;
+  let __traceOldParent__ = __traceParent__;
+
+  if (window.__trace__) {
+    if (!__traceParent__.next) {
+      __traceParent__.next = [];
+    }
+
+    const current = {
+      name: 'A',
+      params: [\\"a\\", \\"b\\", \\"c\\"]
+    };
+
+    __traceParent__.next.push(current);
+
+    window.__traceParent__ = current;
+  }
+
+  if (a === b) {
+    window.__traceParent__ = __traceOldParent__;
+    return 'ok';
+  }
+
+  switch (c) {
+    case '1':
+      window.__traceParent__ = __traceOldParent__;
+      return '1';
+
+    default:
+      window.__traceParent__ = __traceOldParent__;
+      return '2';
+  }
+
+  window.__traceParent__ = __traceOldParent__;
+  return 'error';
+  window.__traceParent__ = __traceOldParent__;
+}
+"
+`;

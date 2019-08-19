@@ -9,9 +9,34 @@ function insertCode(babel, path, name) {
         body.unshift(node);
     });
 
-    babel.parse(utils.getAfterHookCode()).program.body.forEach(node => {
-        body.push(node);
+    const afterNode = babel.parse(utils.getAfterHookCode()).program.body[0];
+
+    // handler function return
+    path.traverse({
+        ReturnStatement: (subPath) => {
+
+            const parentBody = subPath.parent.body || subPath.parent.consequent;
+            if (parentBody) {
+                let returnIndex = -1;
+                for (let i = 0; i < parentBody.length; i++) {
+                    if (parentBody[i].type === 'ReturnStatement') {
+                        returnIndex = i;
+                        break;
+                    }
+                }
+                if (returnIndex !== -1) {
+                    if (returnIndex === 0) {
+                        parentBody.unshift(afterNode);
+                    } else {
+                        parentBody.splice(returnIndex, 0, afterNode);
+                    }
+                }
+            }
+        }
     });
+
+    // handler no return
+    body.push(afterNode);
 }
 
 function expressionHandle(babel, path) {

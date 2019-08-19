@@ -20,8 +20,8 @@ function getAfterHookCode() {
 }
 
 function ignoreFunction(name = '') {
-    // 忽略匿名函数
-    // 忽略 __NoTraceHook__ 标记的函数
+    // ignore anonymous functions
+    // ignore __NoTraceHook__ tag function
     return name === '' || name.indexOf('__NoTraceHook__') !== -1;
 }
 

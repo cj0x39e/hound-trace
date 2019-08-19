@@ -52,6 +52,26 @@ pluginTester({
 
                 const __NoTraceHook__C = function () { }
             `
+        },
+        {
+            title: 'return function',
+            code: `
+                function A(a, b, c) {
+                    if ( a === b) {
+                        return 'ok';
+                    }
+
+                    switch (c) {
+                        case '1':
+                            return '1';
+                    
+                        default:
+                            return '2';
+                    }
+
+                    return 'error';
+                }
+            `
         }
     ]
 });
