@@ -171,6 +171,10 @@ function renderCallback(callStack, options) {
   var frameCount = 0;
   var queue = [callStack];
 
+  if (!callStack.name) {
+    callStack.name = 'Begin';
+  }
+
   var _loop = function _loop() {
     var frame = _queue[_i];
 

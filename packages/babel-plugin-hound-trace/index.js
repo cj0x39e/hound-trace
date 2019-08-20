@@ -40,9 +40,17 @@ function insertCode(babel, path, name) {
 }
 
 function expressionHandle(babel, path) {
-    if (path.parent.type !== 'VariableDeclarator') return;
 
-    const name = (path.parent.id && path.parent.id.name) || '';
+    const parentType = path.parent.type;
+    let name;
+
+    if (parentType === 'VariableDeclarator') {
+        name = (path.parent.id && path.parent.id.name) || '';
+    } else if (parentType === 'ObjectProperty') {
+        name = (path.parent.key && path.parent.key.name) || '';
+    } else {
+        return;
+    }
 
     if (utils.ignoreFunction(name)) return;
 

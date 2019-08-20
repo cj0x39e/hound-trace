@@ -24,10 +24,13 @@ export default function renderCallback(callStack, options) {
 
     const queue = [callStack];
 
+    if (!callStack.name) {
+        callStack.name = 'Begin';
+    }
+
     for (const frame of queue) {
         if (Array.isArray(frame.next)) {
             frameCount++;
-
             if (frameCount > maxCallFrame) { break }
 
             const showLable = frame.next.length > 1;
