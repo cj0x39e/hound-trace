@@ -72,17 +72,10 @@ houndTrace.end();
 
 ![b.png](https://i.loli.net/2019/08/15/6NAstG4n5Bz2qlj.png)
 
-## 作者
-
-👤 **CJ**
-
-* Github: [@cj0x39e](https://github.com/cj0x39e)
 
 ## 🤝 参与
 
 欢迎反馈问题或建议!<br />点击这个链接提交 [issues page](https://github.com/cj0x39e/hound-trace/issues).
-
-也可以加入群讨论该工具的相关技术: 878244740。
 
 造这个轮子的背景文章：[写一个 JS 调用栈可视化工具 hound-trace](https://zhuanlan.zhihu.com/p/78351504)
 
